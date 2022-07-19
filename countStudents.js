@@ -6,7 +6,9 @@ function countStudents(height) {
 
   // Copy the elements of the given
   // array to the new array
-//   for (let i = 0; i < n; i++) copy_arr[i] = height[i];
+  for (let i = 0; i < n; i++) {
+    copy_arr[i] = height[i];
+  }
 
   // To store the required count
   let count = 0;
