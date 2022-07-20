@@ -28,6 +28,7 @@ function closestNumbers(numbers) {
 }
 
 closestNumbers([2, 4, 6, 7, 9, 8]);
+closestNumbers2([2, 4, 6, 7, 9, 8]);
 
 function closestNumbers2(numbers) {
   // Write your code here
@@ -36,7 +37,7 @@ function closestNumbers2(numbers) {
   });
 
   var max = numbers[1] - numbers[0];
-  var result = [];
+  var result = [numbers[0], numbers[1]];
 
   for (var i = 1; i < numbers.length; i++) {
     var prev = numbers[i - 1];
@@ -45,10 +46,10 @@ function closestNumbers2(numbers) {
 
     if (diff < max) {
       max = diff;
-      result.push([prev, current]);
+      result = [[prev, current]];
     } else if (diff === max) {
       result.push([prev, current]);
     }
   }
-  result.map((item) => console.log(item));
+  result.map((item) => console.log(item[0], item[1]));
 }
