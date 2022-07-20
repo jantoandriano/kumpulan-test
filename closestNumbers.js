@@ -9,14 +9,14 @@ function closestNumbers(numbers) {
 
   for (var i = 2; i < numbers.length; i++) {
     var prev = numbers[i - 1];
-    var next = numbers[i];
-    var diff = next - prev;
+    var current = numbers[i];
+    var diff = current - prev;
 
     if (diff < max) {
       max = diff;
-      maxPairs = [prev, next];
+      maxPairs = [prev, current];
     } else if (diff === max) {
-      maxPairs = maxPairs.concat([prev, next]);
+      maxPairs = maxPairs.concat([prev, current]);
     }
   }
   var temp = maxPairs;
@@ -26,3 +26,5 @@ function closestNumbers(numbers) {
     }
   }
 }
+
+closestNumbers([1, 3, 2, 4, 6, 5]);
