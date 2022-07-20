@@ -27,7 +27,7 @@ function closestNumbers(numbers) {
   }
 }
 
-closestNumbers([1, 3, 2, 4, 6, 5]);
+closestNumbers([2, 4, 6, 7, 9, 8]);
 
 function closestNumbers2(numbers) {
   // Write your code here
