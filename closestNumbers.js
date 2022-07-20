@@ -26,3 +26,18 @@ function closestNumbers(numbers) {
     }
   }
 }
+
+
+function closestNumbers2 (numbers) {
+  let result = []
+  let minDiff = numbers[1] - numbers[0]
+   numbers.sort((a,b) => a-b));
+   for (let i = 2; i < numbers.length; i++) {
+     minDiff = Math.min(minDiff, numbers[i] - numbers[i-1])
+  }
+   for (let j = 2; j < numbers.length; j++) {
+     if(numbers[j] - numbers[j-1] === minDiff) {
+         result.push(numbers[j-1], numbers[j])
+     }
+  }
+}
