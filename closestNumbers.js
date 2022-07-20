@@ -30,15 +30,25 @@ function closestNumbers(numbers) {
 closestNumbers([1, 3, 2, 4, 6, 5]);
 
 function closestNumbers2(numbers) {
-  let result = [];
-  let minDiff = numbers[1] - numbers[0];
-  numbers.sort((a, b) => a - b);
-  for (let i = 2; i < numbers.length; i++) {
-    minDiff = Math.min(minDiff, numbers[i] - numbers[i - 1]);
-  }
-  for (let j = 2; j < numbers.length; j++) {
-    if (numbers[j] - numbers[j - 1] === minDiff) {
-      result.push(numbers[j - 1], numbers[j]);
+  // Write your code here
+  numbers.sort(function (a, b) {
+    return a - b;
+  });
+
+  var max = numbers[1] - numbers[0];
+  var result = [];
+
+  for (var i = 1; i < numbers.length; i++) {
+    var prev = numbers[i - 1];
+    var current = numbers[i];
+    var diff = current - prev;
+
+    if (diff < max) {
+      max = diff;
+      result.push([prev, current]);
+    } else if (diff === max) {
+      result.push([prev, current]);
     }
   }
+  result.map((item) => console.log(item));
 }
