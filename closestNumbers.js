@@ -27,7 +27,7 @@ function closestNumbers(numbers) {
   }
 }
 
-closestNumbers([2, 4, 6, 7, 9, 8]);
+// closestNumbers([2, 4, 6, 7, 9, 8]);
 closestNumbers2([2, 4, 6, 7, 9, 8]);
 
 function closestNumbers2(numbers) {
@@ -39,7 +39,7 @@ function closestNumbers2(numbers) {
   var max = numbers[1] - numbers[0];
   var result = [numbers[0], numbers[1]];
 
-  for (var i = 1; i < numbers.length; i++) {
+  for (var i = 2; i < numbers.length; i++) {
     var prev = numbers[i - 1];
     var current = numbers[i];
     var diff = current - prev;
