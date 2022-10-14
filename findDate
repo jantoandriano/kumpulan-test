@@ -112,8 +112,6 @@ function converData() {
   let result = [];
 
   for (let i = 0; i < dates.length; i++) {
-    a = dates[i].date;
-
     temp = [...temp, converDate(dates[i].date)];
     result = temp.map((v) => ({
       dates: parseIcsDate(v),
