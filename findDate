@@ -99,11 +99,10 @@ const dates = [
   },
 ];
 
-function converDate(params = "15112021") {
-  return params.replace(/-/g, "");
-}
-
-function parseIcsDate(icsDate) {
+function parseIcsDate(icsDate, removeDash = false) {
+  if (removeDash) {
+    return icsDate.match(/\d{2}(?=\d{4})|\d+/g).join("");
+  }
   return icsDate.match(/\d{2}(?=\d{4})|\d+/g).join("-");
 }
 
@@ -112,7 +111,7 @@ function converData() {
   let result = [];
 
   for (let i = 0; i < dates.length; i++) {
-    temp = [...temp, converDate(dates[i].date)];
+    temp = [...temp, parseIcsDate(dates[i].date, true)];
     result = temp.map((v) => ({
       dates: parseIcsDate(v),
       data: {
